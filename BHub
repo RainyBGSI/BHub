@@ -23,10 +23,15 @@ local Window = Library:CreateWindow({
 	-- but you do not need to define them unless you are changing them :)
 
 	Title = "B Hub",
+        Center = true,
+        AutoShow = true,
+        Resizable = true,
+        ShowCustomCursor = true,
+        NotifySide = "Right",
+        TabPadding = 8,
+        MenuFadeTime = 0.2,
 	Footer = "version: 2.0",
 	Icon = nil,
-	NotifySide = "Right",
-	ShowCustomCursor = true,
 })
 
 -- CALLBACK NOTE:
