@@ -47,20 +47,20 @@ LeftGroupBox:AddToggle("MyToggle", {
 	Risky = false, -- Makes the text red (the color can be changed using Library.Scheme.Red) (Default value = false)
 
 	Callback = function(Value)
-          _G.AutoBubble = Value
-          if Value then
-             task,spawn(function()
-               while _G.AutoBubble do
-                 local args = {
-                  [1] = "BlowBubble"
-                 }
+     _G.Bubble = Value
+     if Value then
+        task.spawn(function()
+          while _G.Bubble do
+            local args = {
+              [1] = "BlowBubble"
+             }
 
-                 game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Event:FireServer(unpack(args))
-              task.wait(0.1)
-	   end
-        end)
-      end
-    end
+ game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Event:FireServer(unpack(args))
+          task.wait(0.1)
+         end
+       end)
+     end
+   end
 })
 
 
