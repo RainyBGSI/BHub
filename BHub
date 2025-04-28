@@ -23,7 +23,7 @@ local Window = Library:CreateWindow({
 	-- but you do not need to define them unless you are changing them :)
 
 	Title = "RB Hub",
-	Footer = "version: Bubble Gum Simulator INFINITY",
+	Footer = "Bubble Gum Simulator INFINITY",
 	Icon = nil,
 	NotifySide = "Right",
 	ShowCustomCursor = true,
@@ -35,7 +35,7 @@ local Tabs = {
 	["UI Settings"] = Window:AddTab("UI Settings", "settings"),
 }
 
-local LeftGroupBox = Tabs.Main:AddLeftGroupbox("Groupbox")
+local LeftGroupBox = Tabs.Main:AddLeftGroupbox("Automations")
 
 
 LeftGroupBox:AddToggle("MyToggle", {
