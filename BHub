@@ -38,7 +38,7 @@ local Tabs = {
 local LeftGroupBox = Tabs.Main:AddLeftGroupbox("Automations")
 
 
-LeftGroupBox:AddToggle("MyToggle", {
+LeftGroupBox:AddToggle("Auto Blow Bubbles", {
    Text = "Auto Blow Bubbles",
 
    Default = true, -- Default value (true / false)
