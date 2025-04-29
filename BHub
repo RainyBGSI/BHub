@@ -63,6 +63,64 @@ LeftGroupBox:AddToggle("Auto Blow Bubbles", {
    end
 })
 
+LeftGroupBox:AddToggle("Auto Sell", {
+   Text = "Auto Sell",
+
+   Default = false, -- Default value (true / false)
+   Disabled = false, -- Will disable the toggle (true / false)
+   Visible = true, -- Will make the toggle invisible (true / false)
+   Risky = false, -- Makes the text red (the color can be changed using Library.Scheme.Red) (Default value = false)
+
+   Callback = function(Value)
+     _G.Sell = Value
+     if Value then
+        task.spawn(function()
+          while _G.Sell do
+            local args = {
+              [1] = "SellBubble"
+             }
+
+ game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+          task.wait(0.1)
+         end
+       end)
+     end
+   end
+})
+
+LeftGroupBox:AddToggle("Auto Claim Playtime", {
+   Text = "Auto Sell",
+
+   Default = false, -- Default value (true / false)
+   Disabled = false, -- Will disable the toggle (true / false)
+   Visible = true, -- Will make the toggle invisible (true / false)
+   Risky = false, -- Makes the text red (the color can be changed using Library.Scheme.Red) (Default value = false)
+
+   Callback = function(Value)
+     _G.Playtime = Value
+     if Value then
+        task.spawn(function()
+          while _G.Playtime do
+            for i = 1, 9 do
+                  local args = {
+                     [1] = "ClaimPlaytime",
+                     [2] = i
+                  }
+
+                  game:GetService("ReplicatedStorage")
+                     :WaitForChild("Shared")
+                     :WaitForChild("Framework")
+                     :WaitForChild("Network")
+                     :WaitForChild("Remote")
+                     :WaitForChild("Function")
+                     :InvokeServer(unpack(args))
+          task.wait(0.1)
+         end
+       end)
+     end
+   end
+})
+
 
 
 -- UI Settings
