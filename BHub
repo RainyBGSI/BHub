@@ -114,6 +114,50 @@ LeftGroupBox:AddToggle("Auto Hatch Event", {
    end
 })
 
+local Button = Groupbox:AddButton({
+    Text = "Server Hop",
+    Func = function()
+        local HttpService = game:GetService("HttpService")
+        local TeleportService = game:GetService("TeleportService")
+        local Players = game:GetService("Players")
+
+        local gameID = 120434791393668
+        local currentJobId = game.JobId
+        local servers = {}
+
+        local function serverHop()
+            local cursor = ""
+            local success, result
+
+            repeat
+                success, result = pcall(function()
+                    return HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/" .. gameID .. "/servers/Public?sortOrder=Asc&limit=100&cursor=" .. cursor))
+                end)
+
+                if success and result and result.data then
+                    for _, server in ipairs(result.data) do
+                        if server.playing < server.maxPlayers and server.id ~= currentJobId then
+                            table.insert(servers, server.id)
+                        end
+                    end
+                    cursor = result.nextPageCursor or ""
+                else
+                    warn("Failed to fetch server list.")
+                    break
+                end
+            until cursor == "" or #servers >= 1
+
+            if #servers > 0 then
+                TeleportService:TeleportToPlaceInstance(gameID, servers[math.random(1, #servers)], Players.LocalPlayer)
+            else
+                warn("No available servers found to hop.")
+            end
+        end
+
+        serverHop()
+    end
+})
+
 
 
 -- UI Settings
