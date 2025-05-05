@@ -200,6 +200,57 @@ local Button = RightGroupBox:AddButton({
     end
 })
 
+local RightGroupBox2 = Tabs.Main:AddRightGroupbox2("Items")
+
+local Button = Groupbox:AddButton({
+    Text = "Use Lucky Evolved",
+    Func = function()
+        local args = {
+          "UsePotion",
+          "Lucky",
+           6
+        }
+game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+    end
+})
+
+local Button = Groupbox:AddButton({
+    Text = "Use Speed Evolved",
+    Func = function()
+        local args = {
+          "UsePotion",
+          "Speed",
+           6
+        }
+game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+    end
+})
+
+local Button = Groupbox:AddButton({
+    Text = "Use Mythic Evolved",
+    Func = function()
+        local args = {
+          "UsePotion",
+          "Mythic",
+           6
+        }
+game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+    end
+})
+
+
+local Button = Groupbox:AddButton({
+    Text = "Use Infinity Elixir",
+    Func = function()
+        local args = {
+          "UsePotion",
+          "Infinity Elixir",
+           1
+        }
+game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+    end
+})
+
 
 -- UI Settings
 
