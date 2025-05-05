@@ -167,7 +167,7 @@ Callback = function(Value)
 
 local RightGroupBox = Tabs.Main:AddRightGroupbox("Teleports")
 
-local Button = Groupbox:AddButton({
+local Button = RightGroupbox:AddButton({
     Text = Dice Island",
     Func = function()
         local args = {
