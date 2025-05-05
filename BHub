@@ -200,7 +200,7 @@ local Button = RightGroupBox:AddButton({
     end
 })
 
-local RightGroupBox2 = Tabs.Main:AddRightGroupbox2("Items")
+local RightGroupBox2 = Tabs.Main:AddRightGroupbox("Items")
 
 local Button = RightGroupbox2:AddButton({
     Text = "Use Lucky Evolved",
