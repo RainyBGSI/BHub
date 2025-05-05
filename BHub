@@ -23,7 +23,7 @@ local Window = Library:CreateWindow({
 	-- but you do not need to define them unless you are changing them :)
 
 	Title = "Nigger Hub",
-	Footer = "Bubble Gum Simulator INFINITY MODDED",
+	Footer = "Bubble Gum Simulator INFINITY",
 	Icon = nil,
 	NotifySide = "Right",
 	ShowCustomCursor = true,
