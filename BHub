@@ -174,7 +174,7 @@ local Button = Groupbox:AddButton({
            "Teleport",
            "Workspace.Worlds.Minigame Paradise.Islands.Dice Island.Island.Portal.Spawn"
         }
-game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
     end,
     DoubleClick = false -- Requires double-click for risky actions
 })
