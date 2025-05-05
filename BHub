@@ -165,6 +165,27 @@ Callback = function(Value)
    end
 })
 
+LeftGroupBox2:AddToggle("Auto Hatch Gamer", {
+   Text = "Auto Hatch Gamer",
+
+Callback = function(Value)
+      _G.Egg = Value
+      if Value then
+         task.spawn(function()
+            while _G.Egg do
+               local args = {
+                 "HatchEgg",
+                 "Game Egg",
+                  6
+               }
+game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+               task.wait(0.1)
+            end
+         end)
+      end
+   end
+})
+
 local RightGroupBox = Tabs.Main:AddRightGroupbox("Teleports")
 
 local Button = RightGroupBox:AddButton({
