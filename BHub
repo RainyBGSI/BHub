@@ -22,7 +22,7 @@ local Window = Library:CreateWindow({
 	-- Position and Size are also valid options here
 	-- but you do not need to define them unless you are changing them :)
 
-	Title = "Scam Hub",
+	Title = "Nigger Hub",
 	Footer = "Bubble Gum Simulator INFINITY MODDED",
 	Icon = nil,
 	NotifySide = "Right",
@@ -92,8 +92,8 @@ LeftGroupBox:AddToggle("Auto Sell", {
 
 local LeftGroupBox2 = Tabs.Main:AddLeftGroupbox("Eggs")
 
-LeftGroupBox2:AddToggle("Auto Hatch Event", {
-   Text = "Auto Hatch 100M",
+LeftGroupBox2:AddToggle("Auto Hatch Showman", {
+   Text = "Auto Hatch Showman",
 
    Default = false,
    Disabled = false,
@@ -107,8 +107,8 @@ LeftGroupBox2:AddToggle("Auto Hatch Event", {
             while _G.Egg do
                local args = {
                   "HatchEgg",
-                  "100M Egg",
-                  25
+                  "Showman Egg",
+                   6
                }
                game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
                task.wait(0.1)
@@ -118,40 +118,55 @@ LeftGroupBox2:AddToggle("Auto Hatch Event", {
    end
 })
 
-local RightGroupBox = Tabs.Main:AddRightGroupbox("Trade")
+LeftGroupBox2:AddToggle("Auto Hatch Mining", {
+   Text = "Auto Hatch Mining",
 
-RightGroupBox:AddToggle("Auto Accept Trade", {
-    Text = "Auto Accept Trade",
-    Default = false,
-    Disabled = false,
-    Visible = true,
-    Risky = false,
+   Default = false,
+   Disabled = false,
+   Visible = true,
+   Risky = false,
 
-    Callback = function(Value)
-        _G.AutoAcceptTrade = Value
-        if Value then
-            task.spawn(function()
-                local Players = game:GetService("Players")
-                local LocalPlayer = Players.LocalPlayer
-                local RemoteEvent = game:GetService("ReplicatedStorage")
-                    :WaitForChild("Shared")
-                    :WaitForChild("Framework")
-                    :WaitForChild("Network")
-                    :WaitForChild("Remote")
-                    :WaitForChild("Event")
-
-                while _G.AutoAcceptTrade do
-                    for _, player in pairs(Players:GetPlayers()) do
-                        if player ~= LocalPlayer then
-                            RemoteEvent:FireServer("TradeAcceptRequest", player)
-                        end
-                    end
-                    task.wait(0.1)
-                end
-            end)
-        end
-    end
+   Callback = function(Value)
+      _G.Egg = Value
+      if Value then
+         task.spawn(function()
+            while _G.Egg do
+               local args = {
+                  "HatchEgg",
+                  "Mining Egg",
+                   6
+               }
+               game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+               task.wait(0.1)
+            end
+         end)
+      end
+   end
 })
+
+LeftGroupBox2:AddToggle("Auto Hatch Cyber", {
+   Text = "Auto Hatch Cyber",
+
+Callback = function(Value)
+      _G.Egg = Value
+      if Value then
+         task.spawn(function()
+            while _G.Egg do
+               local args = {
+                  "HatchEgg",
+                  "Cyber Egg",
+                   6
+               }
+               game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+               task.wait(0.1)
+            end
+         end)
+      end
+   end
+})
+
+local RightGroupBox = Tabs.Main:AddRightGroupbox("Teleports")
+
 
 
 
