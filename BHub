@@ -167,24 +167,16 @@ Callback = function(Value)
 
 local RightGroupBox = Tabs.Main:AddRightGroupbox("Teleports")
 
-local Button = RightGroupbox:AddButton({
-    Text = Dice Island",
+local Button = RightGroupBox:AddButton({
+    Text = "Dice Island",
     Func = function()
         local args = {
-           "Teleport",
-           "Workspace.Worlds.Minigame Paradise.Islands.Dice Island.Island.Portal.Spawn"
+            "Teleport",
+            "Workspace.Worlds.Minigame Paradise.Islands.Dice Island.Island.Portal.Spawn"
         }
         game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
     end,
-    DoubleClick = false -- Requires double-click for risky actions
-})
-
--- You can also add sub-buttons
-Button:AddButton({
-    Text = "Sub Button",
-    Func = function()
-        print("Sub-button clicked!")
-    end
+    DoubleClick = false
 })
 
 
