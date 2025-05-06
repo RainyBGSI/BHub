@@ -92,8 +92,6 @@ LeftGroupBox:AddToggle("Auto Sell", {
 
 local LeftGroupBox2 = Tabs.Main:AddLeftGroupbox("Eggs")
 
-local Label = Groupbox:AddLabel("World 2")
-
 LeftGroupBox2:AddToggle("Auto Hatch Showman", {
    Text = "Auto Hatch Showman",
 
@@ -187,8 +185,6 @@ game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framew
       end
    end
 })
-
-local Label = Groupbox:AddLabel("World 1")
 
 LeftGroupBox2:AddToggle("Auto Hatch Infinity", {
    Text = "Auto Hatch Infinity",
