@@ -92,6 +92,8 @@ LeftGroupBox:AddToggle("Auto Sell", {
 
 local LeftGroupBox2 = Tabs.Main:AddLeftGroupbox("Eggs")
 
+local Label = Groupbox:AddLabel("World 2")
+
 LeftGroupBox2:AddToggle("Auto Hatch Showman", {
    Text = "Auto Hatch Showman",
 
@@ -176,6 +178,29 @@ Callback = function(Value)
                local args = {
                  "HatchEgg",
                  "Game Egg",
+                  6
+               }
+game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+               task.wait(0.1)
+            end
+         end)
+      end
+   end
+})
+
+local Label = Groupbox:AddLabel("World 1")
+
+LeftGroupBox2:AddToggle("Auto Hatch Infinity", {
+   Text = "Auto Hatch Infinity",
+
+Callback = function(Value)
+      _G.Egg = Value
+      if Value then
+         task.spawn(function()
+            while _G.Egg do
+               local args = {
+                 "HatchEgg",
+                 "Infinity Egg",
                   6
                }
 game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
