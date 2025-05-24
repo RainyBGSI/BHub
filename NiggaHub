@@ -52,7 +52,7 @@ LeftGroupBox:AddToggle("Auto Fast Roll", {
         task.spawn(function()
           while _G.Roll do
             game:GetService("ReplicatedStorage"):WaitForChild("L5_z%Q1!Rx_"):FireServer()
-          task.wait(0.35)
+          task.wait(0.1)
          end
        end)
      end
