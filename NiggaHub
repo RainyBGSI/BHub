@@ -23,7 +23,7 @@ local Window = Library:CreateWindow({
 	-- but you do not need to define them unless you are changing them :)
 
 	Title = "Rift Hub",
-	Footer = "Bubble Gum Simulator INFINITY",
+	Footer = "Bubble Gum Simulator INFINITY Modded",
 	Icon = nil,
 	NotifySide = "Right",
 	ShowCustomCursor = true,
@@ -35,11 +35,11 @@ local Tabs = {
 	["UI Settings"] = Window:AddTab("UI Settings", "settings"),
 }
 
-local LeftGroupBox = Tabs.Main:AddLeftGroupbox("Auto Shit for Retards")
+local LeftGroupBox = Tabs.Main:AddLeftGroupbox("Automations")
 
 
-LeftGroupBox:AddToggle("Auto Fast Roll", {
-   Text = "Auto Fast Roll",
+LeftGroupBox:AddToggle("Auto Blow Bubbles", {
+   Text = "Auto Blow Bubbles",
 
    Default = false, -- Default value (true / false)
    Disabled = false, -- Will disable the toggle (true / false)
@@ -47,12 +47,12 @@ LeftGroupBox:AddToggle("Auto Fast Roll", {
    Risky = false, -- Makes the text red (the color can be changed using Library.Scheme.Red) (Default value = false)
 
    Callback = function(Value)
-     _G.Roll = Value
+     _G.Autoblow = Value
      if Value then
         task.spawn(function()
-          while _G.Roll do
-            game:GetService("ReplicatedStorage"):WaitForChild("L5_z%Q1!Rx_"):FireServer()
-          task.wait(0.13)
+          while _G.Autoblow do
+            game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.RemoteEvent:FireServer(unpack(args))
+          task.wait(0.8)
          end
        end)
      end
