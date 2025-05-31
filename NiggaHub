@@ -59,6 +59,19 @@ LeftGroupBox:AddToggle("Auto Blow Bubbles", {
    end
 })
 
+LeftGroupBox:AddToggle("Auto Sell", {
+   Text = "Auto Sell",
+
+   Default = false, -- Default value (true / false)
+   Disabled = false, -- Will disable the toggle (true / false)
+   Visible = true, -- Will make the toggle invisible (true / false)
+   Risky = false, -- Makes the text red (the color can be changed using Library.Scheme.Red) (Default value = false)
+
+   Callback = function(Value)
+    _G.Sell = Value
+     if Value then
+      task.spawn(function()
+      
 
 -- UI Settings
 
